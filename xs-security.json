@@ -1,0 +1,30 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.RiskViewer",
+      "description": "RiskViewer"
+    },
+    {
+      "name": "$XSAPPNAME.RiskManager",
+      "description": "RiskManager"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "RiskViewer",
+      "description": "RiskViewer",
+      "scope-references": [
+        "$XSAPPNAME.RiskViewer"
+      ]
+    },
+    {
+      "name": "RiskManager",
+      "description": "RiskManager",
+      "scope-references": [
+        "$XSAPPNAME.RiskManager"
+      ]
+    }
+  ],
+  "authorities-inheritance": false
+}
