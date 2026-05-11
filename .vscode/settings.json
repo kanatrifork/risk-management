@@ -12,5 +12,15 @@
         "*.rule": "default",
         "*.properties": "default",
         "*.fragment": "default"
+    },
+    "mdk.uieditor": {
+        "left": {
+            "visible": true
+        },
+        "right": {
+            "visible": true,
+            "width": 780.9999389648438
+        },
+        "device": "phone"
     }
 }

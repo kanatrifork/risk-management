@@ -27,6 +27,22 @@ build-parameters:
       commands:
         - npm install
 modules:
+  - name: RiskManagement-RiskMobile
+    type: html5
+    path: app/RiskManagement.RiskMobile
+    build-parameters:
+      builder: custom
+      commands:
+        - npx mdk build --target module --ui5 --forceUpdate
+        - bash -c "cd Web/MDKModule && rm -rf .npmrc && npm install"
+        - bash -c "cd Web/MDKModule && npm run build"
+        - >-
+          bash -c "mv Web/MDKModule/MDKModule-content.zip
+          ../../build/dist/RiskMobile.zip"
+        - rm -rf Web/MDKModule/dist
+      _artifactName: RiskMobile.zip
+      supported-platforms: []
+      build-result: ../../build/dist
   - name: RiskManagement-riskmanagement.risks
     type: html5
     path: app/riskmanagement.risks
@@ -148,6 +164,10 @@ modules:
     build-parameters:
       build-result: resources
       requires:
+        - name: RiskManagement-RiskMobile
+          artifacts:
+            - RiskMobile.zip
+          target-path: resources
         - name: RiskManagement-riskmanagement.risks
           artifacts:
             - riskmanagementrisks.zip

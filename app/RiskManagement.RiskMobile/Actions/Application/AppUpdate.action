@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/RiskMobile/Rules/Application/AppUpdateFailure.js",
+    "OnSuccess": "/RiskMobile/Rules/Application/AppUpdateSuccess.js"
+}
